@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { searchString, toggleMenu } from '../utils/appSlice';
+import { toggleMenu } from '../utils/appSlice';
 import { YOUTUBE_SEARCH_API } from '../utils/constants';
 import { cacheResults } from '../utils/searchSlice';
+import eventBus from "../utils/eventBus";
 
 const Header = () => {
     const dispatch = useDispatch();
@@ -38,6 +39,16 @@ const Header = () => {
         dispatch(toggleMenu());
     }
 
+    const handleSearch = () => {
+        eventBus.dispatch("searchParam", searchQuery);
+    }
+
+    const suggestionClick = (e) => {
+        setSearchQuery(e.target.innerHTML)
+        eventBus.dispatch("searchParam", e.target.innerHTML);
+        setShowSuggestions(false);
+    }
+
     return (
         <div className='grid grid-flow-col p-4 m-2 rounded-md'>
             <div className='flex col-span-1'>
@@ -49,19 +60,28 @@ const Header = () => {
                     <input 
                         className='w-1/2 border border-gray-400 rounded-l-full px-5 py-2' 
                         type='text'
+                        value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         onFocus={() => setShowSuggestions(true)}
-                        onBlur={() => setShowSuggestions(false)}
+                        onBlur={(e) => {
+                            setShowSuggestions(false);
+                        }}
                     />
                     <button 
                         className='w-12 border border-gray-400 rounded-r-full p-2'
+                        onClick={() => handleSearch()}
                     >🔍</button>
                 </div>
                 {showSuggestions &&
                     <div className='bg-white mx-2 py-2 px-5 w-[31.5rem] rounded-lg absolute'>
                         <ul>
                             {suggestions.map((s) => (
-                                <li key={s} className='py-2 m-1 rounded-lg cursor-pointer hover:bg-gray-100'>🔍 {s}</li>
+                                <li 
+                                    key={s} 
+                                    className='py-2 m-1 rounded-lg cursor-pointer hover:bg-gray-100'
+                                    onMouseDown={(e) => suggestionClick(e)}
+                                >{s}
+                                </li>
                             ))}
                         </ul>
                 </div>
