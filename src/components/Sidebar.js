@@ -19,6 +19,11 @@ const Sidebar = () => {
                 <li className='cursor-pointer p-2 m-1 bg-gray-100 hover:bg-gray-300 rounded-lg'> Shorts</li>
                 <li className='cursor-pointer p-2 m-1 bg-gray-100 hover:bg-gray-300 rounded-lg'> Subscriptions</li>
                 <li className='cursor-pointer p-2 m-1 bg-gray-100 hover:bg-gray-300 rounded-lg'> Library</li>
+                <Link to='/demo'>
+                    <li className='cursor-pointer p-2 m-1 bg-gray-100 hover:bg-gray-300 rounded-lg'> 
+                        Demo
+                    </li>
+                </Link>
             </ul>
             <h1 className='font-bold p-2 m-1 bg-gray-100 rounded-lg'> Subscriptions</h1>
             <ul className='m-1 p-1'>
