@@ -11,7 +11,7 @@ const Sidebar = () => {
     return (
         <div className='w-56 p-5 shadow-lg'>
             <ul>
-                <Link to='/'>
+                <Link to='/body'>
                     <li className='cursor-pointer p-2 m-1 bg-gray-100 hover:bg-gray-300 rounded-lg'>
                         Home
                     </li>
@@ -19,7 +19,7 @@ const Sidebar = () => {
                 <li className='cursor-pointer p-2 m-1 bg-gray-100 hover:bg-gray-300 rounded-lg'> Shorts</li>
                 <li className='cursor-pointer p-2 m-1 bg-gray-100 hover:bg-gray-300 rounded-lg'> Subscriptions</li>
                 <li className='cursor-pointer p-2 m-1 bg-gray-100 hover:bg-gray-300 rounded-lg'> Library</li>
-                <Link to='/demo'>
+                <Link to='/body/demo'>
                     <li className='cursor-pointer p-2 m-1 bg-gray-100 hover:bg-gray-300 rounded-lg'> 
                         Demo
                     </li>

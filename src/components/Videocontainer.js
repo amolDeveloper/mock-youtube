@@ -41,7 +41,7 @@ const Videocontainer = () => {
         <div className='flex flex-wrap'>
           {
             filtered.map(video => (
-              <Link to={'/watch?v=' + video.id}  key={video.id}>
+              <Link to={'/body/watch?v=' + video.id}  key={video.id}>
                 <VideoCard info={video}/>
               </Link>
             ))
