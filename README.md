@@ -5,3 +5,5 @@
 - nested comments section
 - live chat section with optimized code
 - filtering videos based on search suggestion
+- Hosting our mock app on firebase
+- Authntication using firebase authentication API's
