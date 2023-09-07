@@ -1,46 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleMenu } from '../utils/appSlice';
-import { YOUTUBE_SEARCH_API } from '../utils/constants';
-import { cacheResults } from '../utils/searchSlice';
 import eventBus from "../utils/eventBus";
 import { removeUser } from '../utils/userSlice';
-import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from '../utils/firebase';
+import useSearchSuggestion from '../hooks/useSearchSuggestions';
 
 const Header = () => {
     const dispatch = useDispatch();
-    const navigate = useNavigate();
     const user = useSelector((store) => store.user);
     const [searchQuery, setSearchQuery] = useState('');
-    const [suggestions, setSuggestions] = useState([]);
     const [showSuggestions, setShowSuggestions] = useState(false);
-    const searchCache = useSelector((store) => store.search);
 
-    useEffect(() => {
-      const timer = setTimeout(() => {
-        if(searchCache[searchQuery]) {
-            setSuggestions(searchCache[searchQuery])
-        } else {
-            getSuggestions()
-        }
-      }, 200);
-
-      return () => {
-        clearTimeout(timer);
-      }
-    },[searchQuery])
-
-    const getSuggestions = async () => {
-        const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
-        const json = await data.json();
-        setSuggestions(json[1]);
-        dispatch(cacheResults({
-            [searchQuery] : json[1]
-        }))
-    }
-
+    let suggestions = useSearchSuggestion(searchQuery);
+    
     const toggleMenuHandler = () => {
         dispatch(toggleMenu());
     }
