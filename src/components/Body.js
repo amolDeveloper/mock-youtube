@@ -11,7 +11,7 @@ const Body = () => {
         <div>
           <Header />
         </div>
-        <div className='flex m-2 p-4 h-[620px] overflow-y-scroll'>
+        <div className='flex lg:m-2 lg:p-4 sm:m-2 sm:p-1 h-[620px] overflow-y-scroll'>
           <Sidebar />
           <Outlet />
         </div>

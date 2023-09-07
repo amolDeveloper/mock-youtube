@@ -9,7 +9,7 @@ const VideoCard = (props) => {
     const {channelTitle, title, thumbnails} = snippet;
 
     return (
-            <div className='p-2 m-2 w-56 shadow-lg'>
+            <div className='p-2 m-2 lg:w-56 sm:m-1 sm:p-1 sm:w-fit shadow-lg'>
                 <img className='rounded-lg' alt='thumbnail' src={thumbnails?.medium?.url} />
                 <ul>
                     <li className='font-bold py-2'>{title?.length > 42 ? title.substring(0,42) : title}</li>

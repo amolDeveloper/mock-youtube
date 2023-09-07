@@ -28,8 +28,8 @@ const WatchPage = () => {
     }
 
     return (
-        <div className='w-full px-5 m-5'>
-            <div className='flex'>
+        <div className='lg:w-full sm:w-fit lg:px-5 lg:m-5 sm:px-2 sm:m-2'>
+            <div className='lg:flex'>
                 <div>
                     <iframe 
                         title='video'
@@ -39,11 +39,11 @@ const WatchPage = () => {
                         src={"https://www.youtube.com/embed/" + params.get('v') }
                     ></iframe>
                 </div>
-                <div className='w-full'>
+                <div className='lg:w-full sm:w-fit sm:my-5'>
                     <LiveChat />
                 </div>
             </div>
-            <div className='w-[800px]'>
+            <div className='lg:w-[800px] sm:w-fit'>
                 <p className='m-2  font-bold text-3xl'>{videoData?.title}</p>
                 <p className='m-2 p-2 font-bold border bg-gray-200 hover:bg-gray-300 rounded-lg w-fit'>{videoData?.channelTitle} ✔</p>
                 <p className='m-2'> {videoData?.description}</p>

@@ -82,9 +82,9 @@ const Login = () => {
         <>  
             <Wrapper />
             <Header />
-            <div className='w-4/6 mx-auto my-4'>
+            <div className='lg:w-4/6 lg:mx-auto my-4 sm:w-fit sm:mx-5'>
                 <form onSubmit={(e) => e.preventDefault()}>
-                    <div className='w-full p-20 border-2 border-gray-200 bg-gray-200 rounded-3xl'>
+                    <div className='w-full sm:p-2 lg:p-20 border-2 border-gray-200 bg-gray-200 rounded-3xl'>
                         <p className='w-4/6 mx-auto mb-4 font-bold text-3xl '>{isSignIn ? 'Sign In' : 'Sign Up'}</p>
                         {!isSignIn && <div className='w-4/6 my-2 mx-auto'>
                             <input 
@@ -94,7 +94,7 @@ const Login = () => {
                                 placeholder='Full Name'
                             />
                         </div>}
-                        <div className='w-4/6 my-2 mx-auto'>
+                        <div className='lg:w-4/6 lg:my-2 lg:mx-auto sm:w-[90%] sm:mx-2 sm:my-4'>
                             <input 
                                 ref={email}
                                 className='w-full border text-black border-gray-200 rounded-lg p-4' 
@@ -102,7 +102,7 @@ const Login = () => {
                                 placeholder='Email Address'
                             />
                         </div>
-                        <div className='w-4/6 my-2 mx-auto'>
+                        <div className='lg:w-4/6 lg:my-2 lg:mx-auto sm:w-[90%] sm:mx-2 sm:my-4'>
                             <input 
                                 ref={password}
                                 className='w-full border text-black border-gray-200 rounded-lg p-4' 
