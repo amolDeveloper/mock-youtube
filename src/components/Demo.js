@@ -19,7 +19,7 @@ const Demo = () => {
 
   return (
     <div className='flex w-full m-2'>
-      <div className={'w-1/2 border-2 border-gray-300 bg-gray-300 m-4 p-4 rounded-lg ' + (isDark && 'bg-black text-white')}>
+      <div className={'w-1/2 border-2 border-gray-300 m-4 p-4 rounded-lg ' + (isDark && 'bg-black text-white ')}>
         <h1 className='font-bold m-4'>useMemo & useCallBack Hook</h1>
         <div className='m-4'>
             <button 

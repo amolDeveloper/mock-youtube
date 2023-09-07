@@ -38,7 +38,7 @@ const Videocontainer = () => {
     }
 
     return (
-        <div className='lg:flex lg:flex-wrap'>
+        <div className='lg:flex lg:flex-wrap lg:h-[540px] lg:overflow-y-scroll sm:h-fit rounded-lg shadow-lg'>
           {
             filtered.map(video => (
               <Link to={'/body/watch?v=' + video.id}  key={video.id}>

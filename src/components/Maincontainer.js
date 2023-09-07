@@ -4,7 +4,7 @@ import Videocontainer from './Videocontainer'
 
 const Maincontainer = () => {
   return (
-    <div>
+    <div className='sm:w-fit'>
         <Buttonslist />
         <Videocontainer />
     </div>

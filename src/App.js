@@ -7,6 +7,7 @@ import Maincontainer from './components/Maincontainer';
 import WatchPage from './components/WatchPage';
 import Demo from './components/Demo';
 import Login from './components/Login';
+import SearchGPT from './components/SearchGPT';
 
 const appRouter = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const appRouter = createBrowserRouter([
       {
         path: 'demo',
         element: <Demo />
+      },
+      {
+        path: 'gpt',
+        element: <SearchGPT />
       }
     ]
   }

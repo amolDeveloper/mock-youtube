@@ -9,14 +9,18 @@ const Sidebar = () => {
     if (!isMenuOpen) return null;
 
     return (
-        <div className='w-56 p-5 shadow-lg'>
+        <div className='w-56 border border-gray-300 lg:p-5 sm:p-2 rounded-lg shadow-lg'>
             <ul>
                 <Link to='/body'>
                     <li className='cursor-pointer p-2 m-1 bg-gray-100 hover:bg-gray-300 rounded-lg'>
                         Home
                     </li>
                 </Link>
-                <li className='cursor-pointer p-2 m-1 bg-gray-100 hover:bg-gray-300 rounded-lg'> Shorts</li>
+                <Link to='/body/gpt'>
+                    <li className='cursor-pointer p-2 m-1 bg-gray-100 hover:bg-gray-300 rounded-lg'> 
+                        GPT Search
+                    </li>
+                </Link>
                 <li className='cursor-pointer p-2 m-1 bg-gray-100 hover:bg-gray-300 rounded-lg'> Subscriptions</li>
                 <li className='cursor-pointer p-2 m-1 bg-gray-100 hover:bg-gray-300 rounded-lg'> Library</li>
                 <Link to='/body/demo'>

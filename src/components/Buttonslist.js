@@ -7,7 +7,7 @@ const List = [
 
 const Buttonslist = () => {
   return (
-    <div className='flex'>
+    <div className='flex sm:flex-wrap'>
         {
             List.map(button => (
                 <Button key={button} name={button}/>

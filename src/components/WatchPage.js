@@ -17,7 +17,7 @@ const WatchPage = () => {
     },[])
 
     const getVideoData = async () => {
-        const data = await fetch(VIDEO_API + params.get('v') + GOOGLE_API_KEY)
+        const data = await fetch(VIDEO_API + params.get('v') +  GOOGLE_API_KEY)
 
         const json = await data.json();
 
@@ -34,12 +34,12 @@ const WatchPage = () => {
                     <iframe 
                         title='video'
                         width='800'
-                        height="500" 
+                        height="555" 
                         allowFullScreen
                         src={"https://www.youtube.com/embed/" + params.get('v') }
                     ></iframe>
                 </div>
-                <div className='lg:w-full sm:w-fit sm:my-5'>
+                <div className='lg:w-full sm:w-fit sm:my-5 lg:my-0'>
                     <LiveChat />
                 </div>
             </div>
